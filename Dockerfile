@@ -15,7 +15,7 @@ RUN apt-get update \
         openssl \
         wget \
     && rm -rf /var/lib/apt/lists/* \
-    && docker-php-ext-install bz2 curl exif iconv mbstring mcrypt pdo_pgsql zip \
+    && docker-php-ext-install bz2 curl exif iconv mbstring mcrypt mysqli pdo pdo_mysql pdo_pgsql zip \
     && docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/ \
     && docker-php-ext-install gd \
     && curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
